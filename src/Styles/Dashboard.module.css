@@ -1,0 +1,20 @@
+.dashboard{
+    font-size: 1.6rem;
+    width: 100%;
+    
+}
+.content{
+    display: flex;
+    
+}
+.content_left_wrapper{
+    /* width: 198px; */
+    flex: 1 0 200px;
+   
+    background-color: white;
+}
+.content_right_wrapper{
+    width: 1168px;
+    background:  #F5F7FA;
+    width: 100%;
+}
