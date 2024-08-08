@@ -1,0 +1,40 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.input_details{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.navigation_details{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+.navigation{
+    display: flex;
+    justify-content: space-between;
+}
+.sign_in{
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.user_id{
+
+}
+
+input{
+    width: 100%;
+    outline: 0.5px;
+    border: 0.5px solid grey;
+    border-radius: 5px;
+    color: gray;
+    font-size: 1.3rem;
+    padding: 5px;
+    padding-left: 15px;
+    height: 40px;
+    font-size: 1.6rem;
+    margin: 5px 0;
+}
