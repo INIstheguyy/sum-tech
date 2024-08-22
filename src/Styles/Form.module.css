@@ -6,7 +6,7 @@
 .input_details{
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 15px;
 }
 .navigation_details{
     display: flex;
@@ -38,3 +38,33 @@ input{
     font-size: 1.6rem;
     margin: 5px 0;
 }
+
+
+.btn {
+    background: rgb(123, 194, 123);
+    background-image: -webkit-linear-gradient(top, rgb(123, 194, 123), rgb(100, 150, 100));
+    background-image: -moz-linear-gradient(top, rgb(123, 194, 123), rgb(100, 150, 100));
+    background-image: -ms-linear-gradient(top, rgb(123, 194, 123), rgb(100, 150, 100));
+    background-image: -o-linear-gradient(top, rgb(123, 194, 123), rgb(100, 150, 100));
+    background-image: linear-gradient(to bottom, rgb(123, 194, 123), rgb(100, 150, 100));
+    -webkit-border-radius: 6;
+    -moz-border-radius: 6;
+    border-radius: 6px;
+    text-shadow: 4px 10px 22px #666666;
+    font-family: "Circular std";
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: 1px solid white;
+  }
+  
+  .btn:hover {
+    background: rgb(100, 150, 100);
+    background-image: -webkit-linear-gradient(top, rgb(100, 150, 100), rgb(80, 120, 80));
+    background-image: -moz-linear-gradient(top, rgb(100, 150, 100), rgb(80, 120, 80));
+    background-image: -ms-linear-gradient(top, rgb(100, 150, 100), rgb(80, 120, 80));
+    background-image: -o-linear-gradient(top, rgb(100, 150, 100), rgb(80, 120, 80));
+    background-image: linear-gradient(to bottom, rgb(100, 150, 100), rgb(80, 120, 80));
+    text-decoration: none;
+  }

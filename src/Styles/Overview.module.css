@@ -1,0 +1,29 @@
+.overview{
+    font-size: 1.6rem;
+}
+.content{
+    
+}
+.inner_content{
+    padding: 17px;
+}
+.summary{
+
+}
+.summary_content{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+.data{
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+.data_content{
+    display: flex;
+    flex-direction: column;
+}

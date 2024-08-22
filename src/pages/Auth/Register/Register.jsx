@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../../Styles/Register.module.css";
-import logo from "../../../Assets/icon/sumtech-logo.svg"
+import logo from "../../../Assets/icon/sum-tech-logo.svg";
 import RegForm from "./RegForm";
 function Register() {
   return (
@@ -11,7 +11,7 @@ function Register() {
             <div className={styles.content_left}>
               <div className={styles.logo_wrapper}>
                 <img style={{width:"70px"}} src={logo} alt="" />
-                <p>Summtech Pro</p>
+                <p>Summitech Pro</p>
               </div>
             </div>
           </div>

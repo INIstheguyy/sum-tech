@@ -32,7 +32,7 @@ function RegForm() {
         <div className={styles}>
         <Link to="/">Sign in</Link>
         </div>
-        <button className={styles}>Register</button>
+        <button className={styles.btn}>Register</button>
       </div>
     </form>
   );

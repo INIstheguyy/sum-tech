@@ -23,7 +23,7 @@ function Form() {
           <Link to="/Register">Sign up</Link>
           <Link to="">Forgot Password</Link>
         </div>
-        <button>Proceed</button>
+        <button className={styles.btn}>Proceed</button>
       </div>
     </form>
   );
