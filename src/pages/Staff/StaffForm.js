@@ -4,35 +4,43 @@ function StaffForm() {
   return (
     <form action="">
       <div className={styles.input_details}>
-        <div className={styles}>
+        <div className={styles.detail_wrapper}>
           <label htmlFor="">First Name</label>
           <input type="text" placeholder="first name" />
         </div>
-        <div className={styles}>
+        <div className={styles.detail_wrapper}>
           <label htmlFor="">Last Name</label>
           <input type="text" placeholder="last name" />
         </div>
-        <div>
-            <label htmlFor="">Age</label>
-            <input type="number" name="" id="" />
+        <div className={styles.detail_wrapper}>
+          <label htmlFor="">Age</label>
+          <input placeholder="Age" type="number" name="" id="" />
         </div>
-        <div className={styles}>
+        <div className={styles.detail_wrapper}>
           <label htmlFor="">Department</label>
           <input type="text" placeholder="department" />
         </div>
-        <div className={styles}>
+        <div className={styles.detail_wrapper}>
           <label htmlFor="">Job title</label>
           <input type="text" placeholder="job title" />
         </div>
-        <div className={styles}>
-        <label htmlFor="">Sex</label>
+        <div className={styles.detail_wrapper}>
+          <label htmlFor="">Sex</label>
           <select name="" id="">
             <option value="male">male</option>
             <option value="female">female</option>
           </select>
         </div>
-        <div className={styles}>
-        <label htmlFor="">Location</label>
+        <div className={styles.detail_wrapper}>
+          <label htmlFor="">Staff Type</label>
+          <select name="" id="">
+            <option value="male">Active</option>
+            <option value="female">Inactive</option>
+            <option value="female">Contract</option>
+          </select>
+        </div>
+        <div className={styles.detail_wrapper}>
+          <label htmlFor="">Location</label>
           <select name="location" id="">
             <option value="ikeja">IKEJA</option>
             <option value="ikeja">LEKKI PHASE 1</option>

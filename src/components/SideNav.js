@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "../Styles/SideNav.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../Assets/icon/sum-tech-home.svg";
 function SideNav() {
+  const navaigate = useNavigate()
   return (
     <div className={styles.sidenav}>
       <div className={styles.content}>
@@ -53,7 +54,7 @@ function SideNav() {
             >
               Staff
             </NavLink>
-            <button className={styles.logout}>Logout</button>
+            <button onClick={() => navaigate("/")} className={styles.logout}>Logout</button>
           </div>
         </div>
       </div>

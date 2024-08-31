@@ -2,16 +2,20 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+    
+    
 }
 .input_details{
     display: flex;
     flex-direction: column;
     gap: 15px;
+    
 }
 .navigation_details{
     display: flex;
     flex-direction: column;
     gap: 35px;
+    font-size: 1.4rem;
 }
 .navigation{
     display: flex;
@@ -24,7 +28,9 @@
 .user_id{
 
 }
-
+label{
+    font-size: 1.4rem;
+}
 input{
     width: 100%;
     outline: 0.5px;
@@ -37,34 +43,37 @@ input{
     height: 40px;
     font-size: 1.6rem;
     margin: 5px 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
 .btn {
-    background: rgb(123, 194, 123);
-    background-image: -webkit-linear-gradient(top, rgb(123, 194, 123), rgb(100, 150, 100));
-    background-image: -moz-linear-gradient(top, rgb(123, 194, 123), rgb(100, 150, 100));
-    background-image: -ms-linear-gradient(top, rgb(123, 194, 123), rgb(100, 150, 100));
-    background-image: -o-linear-gradient(top, rgb(123, 194, 123), rgb(100, 150, 100));
-    background-image: linear-gradient(to bottom, rgb(123, 194, 123), rgb(100, 150, 100));
-    -webkit-border-radius: 6;
-    -moz-border-radius: 6;
+    background: hsla(0, 0%, 76.9%, 0.1);
+    background-image: -webkit-linear-gradient(top, hsla(0, 0%, 76.9%, 0.1), hsla(0, 0%, 76.9%, 0.1));
+    background-image: -moz-linear-gradient(top, hsla(0, 0%, 76.9%, 0.1), hsla(0, 0%, 76.9%, 0.1));
+    background-image: -ms-linear-gradient(top, hsla(0, 0%, 76.9%, 0.1), hsla(0, 0%, 76.9%, 0.1));
+    background-image: -o-linear-gradient(top, hsla(0, 0%, 76.9%, 0.1), hsla(0, 0%, 76.9%, 0.1));
+    background-image: linear-gradient(to bottom, hsla(0, 0%, 76.9%, 0.1), hsla(0, 0%, 76.9%, 0.1));
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
     border-radius: 6px;
-    text-shadow: 4px 10px 22px #666666;
+    
     font-family: "Circular std";
     color: #ffffff;
     font-size: 20px;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 20px;
     text-decoration: none;
-    border: 1px solid white;
-  }
-  
-  .btn:hover {
-    background: rgb(100, 150, 100);
-    background-image: -webkit-linear-gradient(top, rgb(100, 150, 100), rgb(80, 120, 80));
-    background-image: -moz-linear-gradient(top, rgb(100, 150, 100), rgb(80, 120, 80));
-    background-image: -ms-linear-gradient(top, rgb(100, 150, 100), rgb(80, 120, 80));
-    background-image: -o-linear-gradient(top, rgb(100, 150, 100), rgb(80, 120, 80));
-    background-image: linear-gradient(to bottom, rgb(100, 150, 100), rgb(80, 120, 80));
+    border: 1px double white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover, .btn:active {
+    background: #ffffff;
+    background-image: -webkit-linear-gradient(top, #ffffff, #ffffff);
+    background-image: -moz-linear-gradient(top, #ffffff, #ffffff);
+    background-image: -ms-linear-gradient(top, #ffffff, #ffffff);
+    background-image: -o-linear-gradient(top, #ffffff, #ffffff);
+    background-image: linear-gradient(to bottom, #ffffff, #ffffff);
+    color: hsla(0, 63%, 17%, 0.438);
     text-decoration: none;
-  }
+}

@@ -53,3 +53,37 @@
       font-size: 2.2rem;
       font-weight: bold;
   }
+  form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .input_details{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .detail_wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  input{
+    outline: none;
+    border: none;
+  }
+  select{
+    outline: none;
+    border: none;
+    padding: 5px 0;
+    border-radius: 5px;
+  }
+  .navigation_details button{
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 5px 0;
+    border-radius: 5px;
+    background-color: #71278b;
+    color: white;
+  }

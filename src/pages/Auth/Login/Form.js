@@ -1,19 +1,20 @@
 import React from "react";
 import styles from "../../../Styles/Form.module.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 function Form() {
+  const navigate = useNavigate();
   return (
     <form>
       <div className={styles.input}>
         <div className={styles.email}>
-          <label htmlFor=""></label>
-          <input type="text" />
+          <label htmlFor="">Email</label>
+          <input type="text" placeholder="Enter your email..." />
         </div>
         <div className={styles.password}>
           <div className={styles}>
-            <label htmlFor=""></label>
-            <input type="text" />
+            <label htmlFor="">Password</label>
+            <input type="text"  placeholder="Enter your Password..." />
           </div>
           <div className={styles}></div>
         </div>
@@ -23,7 +24,9 @@ function Form() {
           <Link to="/Register">Sign up</Link>
           <Link to="">Forgot Password</Link>
         </div>
-        <button className={styles.btn}>Proceed</button>
+        <button onClick={() => {
+          navigate("/overview")
+        }} className={styles.btn}>Login</button>
       </div>
     </form>
   );
