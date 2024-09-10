@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../../Styles/Form.module.css";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Form() {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ function Form() {
         <div className={styles.password}>
           <div className={styles}>
             <label htmlFor="">Password</label>
-            <input type="text"  placeholder="Enter your Password..." />
+            <input type="text" placeholder="Enter your Password..." />
           </div>
           <div className={styles}></div>
         </div>
@@ -24,9 +24,14 @@ function Form() {
           <Link to="/Register">Sign up</Link>
           <Link to="">Forgot Password</Link>
         </div>
-        <button onClick={() => {
-          navigate("/overview")
-        }} className={styles.btn}>Login</button>
+        <button
+          onClick={() => {
+            navigate("/overview");
+          }}
+          className={styles.btn}
+        >
+          Login
+        </button>
       </div>
     </form>
   );
