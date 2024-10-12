@@ -1,23 +1,52 @@
-import React from "react";
+import { React, useState } from "react";
 import styles from "../../../Styles/Form.module.css";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { apiEndpoints } from "../../../Constants";
+
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { firebaseAuth, DataBase } from "../../../packages/Firebase";
+import { setDoc, doc } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 function RegForm() {
+  const [userDetails, setUserDetails] = useState({
+    email: "",
+    password: "",
+    fullName: "",
+    role: "",
+    phoneNo: "",
+  });
+
   const onSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await axios.post(apiEndpoints.auth.register, {
-        name: "Test Test Test",
-        email: "test@example.com",
-        password: "1111",
-      });
+      await createUserWithEmailAndPassword(
+        firebaseAuth,
+        userDetails.email,
+        userDetails.password
+      );
+      const user = firebaseAuth.currentUser;
+      console.log(user);
+      if(user){
+        await setDoc(doc(DataBase, "users", user.uid),{
+          email:user.email,
+          fullName:userDetails.fullName,
+          role:userDetails.role,
+          phone_no: userDetails.phoneNo
+        });
+      }
+      
 
-      console.log(response.data);
-    } catch (err) {
-      console.log(err);
+      console.log("Sign Up Successful, Please login");
+      toast.success("Sign Up Successful, Please login",{
+        position:"top-left"
+      })
+    } catch (error) {
+      console.log(error.message);
+      console.log("Sign Up Successful, Please login");
+      toast.error(error.message,{
+        position:"top-left"
+      })
     }
   };
 
@@ -26,24 +55,54 @@ function RegForm() {
       <div className={styles.input_details}>
         <div className={styles.full_name}>
           <label htmlFor="">Full name</label>
-          <input type="text" />
+          <input
+            value={userDetails.fullName}
+            onChange={(e) =>
+              setUserDetails({ ...userDetails, fullName: e.target.value })
+            }
+            type="text"
+          />
         </div>
         <div className={styles.email}>
           <label htmlFor="">Email</label>
-          <input type="email" />
+          <input
+            value={userDetails.email}
+            onChange={(e) =>
+              setUserDetails({ ...userDetails, email: e.target.value })
+            }
+            type="email"
+          />
         </div>
         <div className={styles.phone_no}>
           <label htmlFor="">Phone Number</label>
-          <input type="text" />
+          <input
+            value={userDetails.phoneNo}
+            onChange={(e) =>
+              setUserDetails({ ...userDetails, phoneNo: e.target.value })
+            }
+            type="text"
+          />
         </div>
         <div className={styles.role}>
           <label htmlFor="">Role</label>
-          <input type="text" />
+          <input
+            value={userDetails.role}
+            onChange={(e) =>
+              setUserDetails({ ...userDetails, role: e.target.value })
+            }
+            type="text"
+          />
         </div>
         <div className={styles.password}>
           <div className={styles.password_input}>
             <label htmlFor="">Password</label>
-            <input type="text" />
+            <input
+              value={userDetails.password}
+              onChange={(e) =>
+                setUserDetails({ ...userDetails, password: e.target.value })
+              }
+              type="password"
+            />
           </div>
           <div className={styles.eye_icon}></div>
         </div>

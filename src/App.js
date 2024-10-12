@@ -9,6 +9,8 @@ import Location from "./pages/Location/Location";
 import System from "./pages/System/System";
 import Staff from "./pages/Staff/Staff";
 import Devices from "./pages/Devices/Devices";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -51,6 +53,7 @@ function App() {
   return (
     <div className={styles.App}>
       <RouterProvider router={router}/>
+      <ToastContainer/>
     </div>
   );
 }
