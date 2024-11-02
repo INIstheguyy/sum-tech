@@ -1,0 +1,264 @@
+.table_wrapper {
+}
+.table_content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.menu_wrapper {
+  background-color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+.menu_list {
+  display: flex;
+  justify-self: flex-start;
+  gap: 50px;
+}
+.bar_list {
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: #8ea396;
+}
+.active_bar_list {
+  color: #1814f3;
+  font-weight: bold;
+  border-bottom: 1px solid #1814f3;
+}
+.table_header {
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: ;
+}
+.table_heading {
+  color: #8c8191;
+  font-weight: bold;
+  font-size: 2.4rem;
+  width: 100%;
+}
+.header_menu {
+  
+}
+.search_wrapper {
+  border: 1px solid rgba(215, 232, 251, 1);
+}
+.menu_search {
+  padding: ;
+  border: 0;
+  font-size: 1.6rem;
+  right: 0.625em;
+}
+
+.table {
+  overflow-y: auto;
+}
+
+.right_section_wrapper {
+  width: 23%;
+}
+.right_section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.summary_header{
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+}
+.summary_header p {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+.summary_body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+}
+.summary_data {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+}
+.sum_data_item {
+  width: 100%;
+  height: 116px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 10px;
+}
+.Tsum_data_item {
+  width: 100%;
+    height: 116px;
+    background-color: #F4F7FF;
+    border-radius: 10px;
+    padding: 10px;
+}
+.filter_list{
+  width: 120px;
+  height: fit-content;
+  box-shadow: 0px 8px 24px -4px rgba(28, 50, 79, 0.19);
+  border: 0.0625em solid rgba(25, 59, 103, 0.05);
+  margin-top: 20%;
+  margin-left: -5%;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+}
+.filter_list p{
+  width: 110px;
+  height: fit-content;
+  color: ;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.625em;
+  font-family: "Circular Std";
+  padding: 0.625em;
+  cursor: pointer;
+  z-index: 1;
+}
+.filter_list p:hover{
+  background-color: #F4F7FF;
+  width: 100%;
+}
+table{
+  width: 100%;
+  /* height: 300px; */
+  border-collapse: collapse;
+}
+tr td{
+  background-color: white;
+  border-bottom: 3px solid #ccc;
+  border-top: 3px solid #ccc;
+
+}
+  td{
+    
+    text-align: start;
+    padding: 10px;
+  }
+th{
+  text-align: start;
+  padding: 10px
+}
+.pagination{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 20px;
+  align-items: center;
+
+}
+.pagination button{
+  width: fit-content;
+}
+
+.add_user_btn{
+  color: rgba(24, 20, 243, 1);
+  background-color: rgba(244, 247, 255, 1);
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  font-weight: 500;
+  font-family: "Roboto";
+  padding: 0.375em 0.375em 0.375em;
+  border: 1px solid rgba(24, 20, 243, 1);
+  border-radius: 0.25em;
+  width: 90px;
+  
+}
+.create{
+  height: 10vh;
+  background-color: white;
+  display: flex;
+  justify-content: center ;
+  flex-direction: column;
+  align-items:  center;
+  padding: 10px;
+}
+.create p{
+  color: #1814f3;
+  font-weight: bold;
+  font-size: 2.4rem;
+  width: 100%;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+.label {
+  display: flex;
+  gap: 20px;
+  padding: 5px;
+  text-transform: capitalize;
+  letter-spacing: 0.05em;
+  line-height: 1em;
+}
+.input_field {
+  padding: 3px 0;
+}
+.error {
+  color: red;
+  font-size: 1.5rem;
+  margin: 2.5px 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 0;
+  margin: 50px 0;
+  gap: 10px;
+}
+
+.pagination_button {
+  padding: 8px ;
+  cursor: pointer;
+  
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination_button:hover {
+  background-color: #d0d0d0;
+}
+
+.previous_button {
+  background-color: #f4f7ff;
+  color: #1814f3;
+  border: 1px solid #1814f3;
+  width: max-content;
+  padding: 1%;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.next_button {
+  background-color: #f4f7ff;
+  color: #1814f3;
+  border: 1px solid #1814f3;
+  width: fit-content;
+  padding: 1%;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.active_page {
+  font-weight: bold;
+  background-color: #d0d0ff;
+}

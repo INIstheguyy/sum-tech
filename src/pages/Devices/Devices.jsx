@@ -1,8 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../Styles/Devices.module.css";
 import DashboardHeader from "../../components/DashboardHeader";
 import DeviceForm from "./DeviceForm";
+import MyTable from "../../components/Table";
+import { FaDeleteLeft } from "react-icons/fa6";
+import { collection, getDocs, deleteDoc, doc  } from "firebase/firestore";
+import { DataBase } from "../../packages/Firebase";
+
 function Devices() {
+  const [devices, setDevices] = useState({});
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const querySnapshot = await getDocs(collection(DataBase, "devices"));
+        const devicesArray = querySnapshot.docs.map((doc) => ({
+          id: doc.id, // Include document ID for deletion
+          ...doc.data(),
+        }));
+        setDevices(devicesArray); // Set as an array
+      } catch (err) {
+        console.error("Error fetching devices:", err);
+      }
+    })();
+  }, []);
+
+  const handleDelete = async (deviceId) => {
+    try {
+      await deleteDoc(doc(DataBase, "devices", deviceId)); // Delete document
+      setDevices((prevDevices) =>
+        prevDevices.filter((device) => device.id !== deviceId) // Update UI
+      );
+    } catch (err) {
+      console.error("Error deleting device:", err);
+    }
+  };
+
   return (
     <div className={styles.Devices}>
       <div className={styles.content}>
@@ -50,13 +83,28 @@ function Devices() {
                         <p className={styles}></p>
                       </div>
                     </div>
-                    <div className={styles.data}>
-                      <div className={styles.data_content}>
-                        <p className={styles}>Systems</p>
-                        <p className={styles}></p>
-                      </div>
-                    </div>
+                   
                   </div>
+                </div>
+                <div>
+                  <MyTable
+                    heading={"Devices"}
+                    data={devices}
+                    itemsPerPage={10}
+                    tableHeaders={[
+                      { key: "manufacturer", value: "Manufacturer" },
+                      { key: "location", value: "Location" },
+                      { key: "serial_number", value: "Serial Number" },
+                      { key: "device_type", value: "Device Type" },
+                    ]}
+                    action={(index) => (
+                      <div style={{cursor:"pointer"}} key={index}>
+                        
+                          <FaDeleteLeft onClick={() => handleDelete(devices[index].id)} />
+                        
+                      </div>
+                    )}
+                  />
                 </div>
               </div>
             </div>
@@ -66,7 +114,7 @@ function Devices() {
                   <p>Add devices</p>
                 </div>
                 <div>
-                <DeviceForm/>
+                  <DeviceForm />
                 </div>
               </div>
             </div>

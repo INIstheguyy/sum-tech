@@ -1,0 +1,40 @@
+[debug] [2024-10-23T13:32:50.800Z] ----------------------------------------------------------------------
+[debug] [2024-10-23T13:32:50.803Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\dell\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2024-10-23T13:32:50.804Z] CLI Version:   13.22.1
+[debug] [2024-10-23T13:32:50.805Z] Platform:      win32
+[debug] [2024-10-23T13:32:50.805Z] Node Version:  v18.12.1
+[debug] [2024-10-23T13:32:50.807Z] Time:          Wed Oct 23 2024 14:32:50 GMT+0100 (West Africa Standard Time)
+[debug] [2024-10-23T13:32:50.808Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-23T13:32:50.929Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-23T13:32:50.930Z] > authorizing via signed-in user (komolafeinioluwa9@gmail.com)
+[debug] [2024-10-23T13:32:50.930Z] [iam] checking project summi-tech for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-10-23T13:32:50.932Z] Checked if tokens are valid: true, expires at: 1729692081439
+[debug] [2024-10-23T13:32:50.933Z] Checked if tokens are valid: true, expires at: 1729692081439
+[debug] [2024-10-23T13:32:50.934Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/summi-tech:testIamPermissions [none]
+[debug] [2024-10-23T13:32:50.934Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/summi-tech:testIamPermissions x-goog-quota-user=projects/summi-tech
+[debug] [2024-10-23T13:32:50.935Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/summi-tech:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2024-10-23T13:32:51.008Z] *** [apiv2] error from fetch(https://cloudresourcemanager.googleapis.com/v1/projects/summi-tech:testIamPermissions, {"headers":{},"method":"POST","body":"{\"permissions\":[\"cloudfunctions.functions.create\",\"cloudfunctions.functions.delete\",\"cloudfunctions.functions.get\",\"cloudfunctions.functions.list\",\"cloudfunctions.functions.update\",\"cloudfunctions.operations.get\",\"firebase.projects.get\"]}"}): FetchError: request to https://cloudresourcemanager.googleapis.com/v1/projects/summi-tech:testIamPermissions failed, reason: getaddrinfo ENOTFOUND cloudresourcemanager.googleapis.com
+[debug] [2024-10-23T13:32:51.008Z] [iam] error while checking permissions, command may fail: FirebaseError: Failed to make request to https://cloudresourcemanager.googleapis.com/v1/projects/summi-tech:testIamPermissions
+[debug] [2024-10-23T13:32:51.009Z] Checked if tokens are valid: true, expires at: 1729692081439
+[debug] [2024-10-23T13:32:51.009Z] Checked if tokens are valid: true, expires at: 1729692081439
+[debug] [2024-10-23T13:32:51.010Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/summi-tech/serviceAccounts/summi-tech@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-10-23T13:32:51.010Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/summi-tech/serviceAccounts/summi-tech@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-10-23T13:32:51.022Z] *** [apiv2] error from fetch(https://iam.googleapis.com/v1/projects/summi-tech/serviceAccounts/summi-tech@appspot.gserviceaccount.com:testIamPermissions, {"headers":{},"method":"POST","body":"{\"permissions\":[\"iam.serviceAccounts.actAs\"]}"}): FetchError: request to https://iam.googleapis.com/v1/projects/summi-tech/serviceAccounts/summi-tech@appspot.gserviceaccount.com:testIamPermissions failed, reason: getaddrinfo ENOTFOUND iam.googleapis.com
+[debug] [2024-10-23T13:32:51.022Z] [functions] service account IAM check errored, deploy may fail: Failed to make request to https://iam.googleapis.com/v1/projects/summi-tech/serviceAccounts/summi-tech@appspot.gserviceaccount.com:testIamPermissions {"name":"FirebaseError","children":[],"exit":1,"message":"Failed to make request to https://iam.googleapis.com/v1/projects/summi-tech/serviceAccounts/summi-tech@appspot.gserviceaccount.com:testIamPermissions","original":{"message":"request to https://iam.googleapis.com/v1/projects/summi-tech/serviceAccounts/summi-tech@appspot.gserviceaccount.com:testIamPermissions failed, reason: getaddrinfo ENOTFOUND iam.googleapis.com","type":"system","errno":"ENOTFOUND","code":"ENOTFOUND"},"status":500}
+[info] 
+[info] === Deploying to 'summi-tech'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] +  functions: Finished running predeploy script. 
+[debug] [2024-10-23T13:33:01.482Z] Checked if tokens are valid: true, expires at: 1729692081439
+[debug] [2024-10-23T13:33:01.482Z] Checked if tokens are valid: true, expires at: 1729692081439
+[debug] [2024-10-23T13:33:01.483Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/summi-tech [none]
+[debug] [2024-10-23T13:33:13.511Z] *** [apiv2] error from fetch(https://firebase.googleapis.com/v1beta1/projects/summi-tech, {"headers":{},"method":"GET","signal":{}}): FetchError: request to https://firebase.googleapis.com/v1beta1/projects/summi-tech failed, reason: getaddrinfo ENOTFOUND firebase.googleapis.com
+[debug] [2024-10-23T13:33:13.513Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/summi-tech (original: request to https://firebase.googleapis.com/v1beta1/projects/summi-tech failed, reason: getaddrinfo ENOTFOUND firebase.googleapis.com)
+[debug] [2024-10-23T13:33:13.531Z] FirebaseError: Failed to make request to https://firebase.googleapis.com/v1beta1/projects/summi-tech
+    at RetryOperation._fn (C:\Users\dell\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:261:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project summi-tech. Please make sure the project exists and your account has permission to access it.

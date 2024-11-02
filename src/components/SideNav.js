@@ -38,14 +38,7 @@ function SideNav() {
             >
               Devices
             </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? styles.active : styles.nav_link
-              }
-              to="/System"
-            >
-              System
-            </NavLink>
+           
             <NavLink
               className={({ isActive }) =>
                 isActive ? styles.active : styles.nav_link

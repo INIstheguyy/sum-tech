@@ -4,9 +4,22 @@
 .content{
     
 }
-.inner_content{
-    padding: 17px;
+.inner_content_wrapper {
+  padding: 10px;
 }
+.inner_content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.left_section_wrapper {
+    width: 75%;
+  }
+  .left_section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
 .summary{
 
 }

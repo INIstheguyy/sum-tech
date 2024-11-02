@@ -26,8 +26,8 @@ function Form() {
     } catch (error) {
       console.log(error.message);
       console.log("Sign In Failed, Please Try again!");
-      toast.error("Sign In Failed, Please Try again!",{
-        position:"top-left"
+      toast.error(` Sign In Failed, Please Try again!`,{
+        position:"top-center"
       })
     }
   };

@@ -1,64 +1,137 @@
-import React from "react";
+import React, { useState } from "react";
+import { collection, addDoc } from "firebase/firestore";
 import styles from "../../Styles/Staff.module.css";
+import { DataBase } from "../../packages/Firebase";
+
+// Initial state for the form
+const initialFormState = {
+  first_name: "",
+  last_name: "",
+  age: "",
+  department: "",
+  sex: "male", // Default selection
+  location: "ikeja", // Default selection
+};
+
 function StaffForm() {
+  const [formData, setFormData] = useState(initialFormState); // Form state
+  const [loading, setLoading] = useState(false); // Loading state
+  const [error, setError] = useState(null); // Error state
+
+  // Handle input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  // Handle form submission
+  const onSubmit = async (e) => {
+    e.preventDefault(); // Prevent page reload on submit
+    setLoading(true);
+    try {
+      const docRef = await addDoc(collection(DataBase, "staff"), formData);
+      console.log("Document written with ID: ", docRef.id);
+      setFormData(initialFormState); // Clear form on success
+    } catch (e) {
+      console.error("Error adding document: ", e);
+      setError("Failed to add staff. Please try again."); // Handle errors
+    } finally {
+      setLoading(false); // End loading state
+    }
+  };
+
   return (
-    <form action="">
+    <form onSubmit={onSubmit}>
       <div className={styles.input_details}>
         <div className={styles.detail_wrapper}>
-          <label htmlFor="">First Name</label>
-          <input type="text" placeholder="first name" />
+          <label htmlFor="firstName">First Name</label>
+          <input
+            type="text"
+            name="first_name"
+            placeholder="First name"
+            value={formData.first_name}
+            onChange={handleChange}
+          />
         </div>
+
         <div className={styles.detail_wrapper}>
-          <label htmlFor="">Last Name</label>
-          <input type="text" placeholder="last name" />
+          <label htmlFor="lastName">Last Name</label>
+          <input
+            type="text"
+            name="last_name"
+            placeholder="Last name"
+            value={formData.last_name}
+            onChange={handleChange}
+          />
         </div>
+
         <div className={styles.detail_wrapper}>
-          <label htmlFor="">Age</label>
-          <input placeholder="Age" type="number" name="" id="" />
+          <label htmlFor="age">Age</label>
+          <input
+            type="number"
+            name="age"
+            placeholder="Age"
+            value={formData.age}
+            onChange={handleChange}
+          />
         </div>
+
         <div className={styles.detail_wrapper}>
-          <label htmlFor="">Department</label>
-          <input type="text" placeholder="department" />
+          <label htmlFor="department">Department</label>
+          <input
+            type="text"
+            name="department"
+            placeholder="Department"
+            value={formData.department}
+            onChange={handleChange}
+          />
         </div>
+
         <div className={styles.detail_wrapper}>
-          <label htmlFor="">Job title</label>
-          <input type="text" placeholder="job title" />
-        </div>
-        <div className={styles.detail_wrapper}>
-          <label htmlFor="">Sex</label>
-          <select name="" id="">
-            <option value="male">male</option>
-            <option value="female">female</option>
+          <label htmlFor="sex">Sex</label>
+          <select
+            name="sex"
+            value={formData.sex}
+            onChange={handleChange}
+          >
+            <option value="male">Male</option>
+            <option value="female">Female</option>
           </select>
         </div>
+
         <div className={styles.detail_wrapper}>
-          <label htmlFor="">Staff Type</label>
-          <select name="" id="">
-            <option value="male">Active</option>
-            <option value="female">Inactive</option>
-            <option value="female">Contract</option>
-          </select>
-        </div>
-        <div className={styles.detail_wrapper}>
-          <label htmlFor="">Location</label>
-          <select name="location" id="">
+          <label htmlFor="location">Location</label>
+          <select
+            name="location"
+            value={formData.location}
+            onChange={handleChange}
+          >
             <option value="ikeja">IKEJA</option>
-            <option value="ikeja">LEKKI PHASE 1</option>
-            <option value="ikeja">LEKKI PHASE 2</option>
-            <option value="ikeja">IKORODU</option>
-            <option value="ikeja">OTTA</option>
-            <option value="ikeja">ABUJA</option>
-            <option value="ikeja">GWARINPA</option>
-            <option value="ikeja">ABEOKUTA</option>
-            <option value="ikeja">IJEBU</option>
+            <option value="lekki_phase_1">LEKKI PHASE 1</option>
+            <option value="lekki_phase_2">LEKKI PHASE 2</option>
+            <option value="ikorodu">IKORODU</option>
+            <option value="otta">OTTA</option>
+            <option value="abuja">ABUJA</option>
+            <option value="gwarinpa">GWARINPA</option>
+            <option value="abeokuta">ABEOKUTA</option>
+            <option value="ijebu">IJEBU</option>
           </select>
         </div>
       </div>
+
+      {error && <p className={styles.error}>{error}</p>} {/* Show error if any */}
+
       <div className={styles.navigation_details}>
-        <button>Add staff</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Adding..." : "Add Staff"}
+        </button>
       </div>
     </form>
   );
 }
 
 export default StaffForm;
+
