@@ -43,7 +43,7 @@ function RegForm() {
       })
     } catch (error) {
       console.log(error.message);
-      console.log("Sign Up Successful, Please login");
+      console.log("Sign Up Failed, Please try again");
       toast.error(error.message,{
         position:"top-left"
       })

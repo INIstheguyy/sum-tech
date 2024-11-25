@@ -106,8 +106,8 @@ function Location() {
                   >
                     <option value="all">All Locations</option>
                     <option value="ikeja">IKEJA</option>
-                    <option value="lekki_phase_1">LEKKI PHASE 1</option>
-                    <option value="lekki_phase_2">LEKKI PHASE 2</option>
+                    <option value="lekki_phase_1">LEKKI 1</option>
+                    <option value="lekki_phase_2">LEKKI 2</option>
                     <option value="ikorodu">IKORODU</option>
                     <option value="otta">OTTA</option>
                     <option value="abuja">ABUJA</option>

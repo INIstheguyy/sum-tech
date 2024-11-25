@@ -69,11 +69,11 @@ function StaffForm() {
         </div>
 
         <div className={styles.detail_wrapper}>
-          <label htmlFor="age">Age</label>
+          <label htmlFor="age">Date of Birth</label>
           <input
-            type="number"
+            type="text"
             name="age"
-            placeholder="Age"
+            placeholder="date of birth"
             value={formData.age}
             onChange={handleChange}
           />
@@ -110,8 +110,8 @@ function StaffForm() {
             onChange={handleChange}
           >
             <option value="ikeja">IKEJA</option>
-            <option value="lekki_phase_1">LEKKI PHASE 1</option>
-            <option value="lekki_phase_2">LEKKI PHASE 2</option>
+            <option value="lekki1">LEKKI 1</option>
+            <option value="lekki2">LEKKI 2</option>
             <option value="ikorodu">IKORODU</option>
             <option value="otta">OTTA</option>
             <option value="abuja">ABUJA</option>

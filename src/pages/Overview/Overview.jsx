@@ -9,6 +9,8 @@ function Overview() {
   const [dataType, setDataType] = useState("staff"); // "staff" or "devices"
   const [staff, setStaff] = useState([]);
   const [devices, setDevices] = useState([]);
+  const [staffCount, setStaffCount] = useState(0);
+  const [deviceCount, setDeviceCount] = useState(0);
 
   // Fetch staff data
   useEffect(() => {
@@ -20,6 +22,8 @@ function Overview() {
           ...doc.data(),
         }));
         setStaff(staffData);
+        setStaffCount(querySnapshot.size);
+        
       } catch (err) {
         console.error("Error fetching staff:", err);
       }
@@ -37,6 +41,7 @@ function Overview() {
           ...doc.data(),
         }));
         setDevices(deviceData);
+        setDeviceCount(querySnapshot.size);
       } catch (err) {
         console.error("Error fetching devices:", err);
       }
@@ -63,7 +68,7 @@ function Overview() {
                     <div className={styles.data}>
                       <div className={styles.data_content}>
                         <p className={styles}>Total devices</p>
-                        <p className={styles}></p>
+                        <h1 style={{padding:"15px 5px"}}>{deviceCount}</h1>
                       </div>
                     </div>
                     <div className={styles.data}>
@@ -75,7 +80,7 @@ function Overview() {
                     <div className={styles.data}>
                       <div className={styles.data_content}>
                         <p className={styles}>Total staffs</p>
-                        <p className={styles}></p>
+                        <h1  style={{padding:"15px 5px"}} >{staffCount}</h1>
                       </div>
                     </div>
                   </div>

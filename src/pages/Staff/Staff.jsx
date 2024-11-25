@@ -69,7 +69,7 @@ function Staff() {
                       { key: "last_name", value: "Last Name" },
                       { key: "department", value: "Department" },
                       { key: "location", value: "Location" },
-                      { key: "age", value: "Age" },
+                      { key: "age", value: "Date of Birth" },
                       { key: "sex", value: "Sex" },
                     ]}
                     action={(index) => (

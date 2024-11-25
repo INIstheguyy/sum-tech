@@ -96,6 +96,7 @@ function Devices() {
                       { key: "location", value: "Location" },
                       { key: "serial_number", value: "Serial Number" },
                       { key: "device_type", value: "Device Type" },
+                      { key: "description", value: "Description" },
                     ]}
                     action={(index) => (
                       <div style={{cursor:"pointer"}} key={index}>

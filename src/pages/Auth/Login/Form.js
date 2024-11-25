@@ -27,7 +27,7 @@ function Form() {
       console.log(error.message);
       console.log("Sign In Failed, Please Try again!");
       toast.error(` Sign In Failed, Please Try again!`,{
-        position:"top-center"
+        position:"top-left"
       })
     }
   };
@@ -42,7 +42,7 @@ function Form() {
         <div className={styles.password}>
           <div className={styles}>
             <label htmlFor="">Password</label>
-            <input type="text" value={userDetails.password} onChange={(e) => setUserDetails({...userDetails, password: e.target.value})} placeholder="Enter your Password..." />
+            <input type="password" value={userDetails.password} onChange={(e) => setUserDetails({...userDetails, password: e.target.value})} placeholder="Enter your Password..." />
           </div>
           <div className={styles}></div>
         </div>
